@@ -26,7 +26,7 @@ The system provides a complete client–server messaging architecture with GUI i
 | **GUI Interface** | Built with `Swing`, including login, friend list, and chat windows |
 | **Data Persistence** | Chat history is automatically stored locally in the `Chatdata` folder, named by user pairs |
 
----
+
 
 ## 💻 System Architecture
 The system consists of three core components:
@@ -46,7 +46,7 @@ The system consists of three core components:
    - Defines communication rules through `Message` and `MessageType`.  
    - Supports login verification, text messages, and extensible message types.  
 
----
+
 
 ## 📁 Project Structure
 
@@ -57,7 +57,7 @@ The system consists of three core components:
 - **User_data/** – Defines data models and communication protocols.  
 - **Data/** – Stores persistent chat logs and user information.  
 
----
+
 
 ## 🧠 Feature Demonstration
 
@@ -67,7 +67,7 @@ The system consists of three core components:
 - Users can log in with credentials or register a new account.  
 - Upon successful authentication, the system connects to the server and displays the friend list.
 
----
+
 
 ### Friend List
 ![Friend List](./docs/friends.png)
@@ -76,7 +76,7 @@ The system consists of three core components:
 - Double-click on a friend to start a conversation.  
 - Supports multiple chat windows concurrently.
 
----
+
 
 ### Chat Window
 ![Chat Interface](./docs/chat.png)
@@ -85,7 +85,7 @@ The system consists of three core components:
 - Message history is automatically written to local files.  
 - Supports bi-directional messaging between any two online users.
 
----
+
 
 ### Chat Data Structure
 ![Chat Data Folder](./docs/chatdata.png)
@@ -110,7 +110,7 @@ Each file contains complete time-stamped dialogues between two users.
 4. After login, open the friend list and start chatting with other online users.  
 5. Chat logs will be stored automatically under `Data/Chatdata`.
 
----
+
 
 ## 🔐 System Highlights
 - **Complete TCP Communication Model** — implements real-time Socket-based transmission and response handling.  
@@ -119,7 +119,7 @@ Each file contains complete time-stamped dialogues between two users.
 - **Modular & Maintainable Design** — clear separation between UI, logic, and networking layers.  
 - **Engineering-Oriented Implementation** — includes data persistence, error handling, and multi-user synchronization.
 
----
+
 
 
 
@@ -138,5 +138,8 @@ The project highlights proficiency in:
 
 ---
 
-
+## 🛠️ Build & Run Note
+This project can be compiled and executed directly from source using IntelliJ IDEA or any Java IDE.  
+No external libraries are required. The server should be launched before running the client.  
+Detailed steps are showed above.(in "⚙️ How to Run")
 
