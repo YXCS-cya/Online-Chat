@@ -51,6 +51,7 @@ The system consists of three core components:
 ## 📁 Project Structure
 
 ### 🧭 Summary
+- **Chat_system/** – Save src, all codes and datas are stored in this fileds.
 - **Client/** – Handles GUI, user interactions, and Socket communication.  
 - **Server/** – Manages concurrent client threads and message routing.  
 - **User_data/** – Defines data models and communication protocols.  
@@ -91,6 +92,51 @@ The system consists of three core components:
 
 Chat logs are automatically saved in the `Data/Chatdata` directory,  
 where each file corresponds to a specific conversation:
+```
+YXCS_with_Miku
+Miku_with_YXCS
+YXCS_with_testUser
+```
+
+
+Each file contains complete time-stamped dialogues between two users.
+
+---
+
+## ⚙️ How to Run
+1. Launch the server program `Server.java` to start listening on a defined port.  
+2. Run the client-side application `ClientLogin.java`.  
+3. Enter username and password to log in (or register a new user).  
+4. After login, open the friend list and start chatting with other online users.  
+5. Chat logs will be stored automatically under `Data/Chatdata`.
+
+---
+
+## 🔐 System Highlights
+- **Complete TCP Communication Model** — implements real-time Socket-based transmission and response handling.  
+- **Extensible Protocol Design** — `MessageType` allows easy addition of file transfer and extended message types.  
+- **Thread-Safe Architecture** — each client runs in an independent thread, ensuring stable concurrency.  
+- **Modular & Maintainable Design** — clear separation between UI, logic, and networking layers.  
+- **Engineering-Oriented Implementation** — includes data persistence, error handling, and multi-user synchronization.
+
+---
+
+
+
+## 🧾 Summary
+This project demonstrates **practical network programming and multi-threaded system design** using Java.  
+It combines **Socket-based communication**, **object serialization**, **thread management**, and **persistent data storage**  
+to create a complete instant messaging application with a functional user interface.
+
+The project highlights proficiency in:
+- TCP/IP communication principles  
+- Concurrency control and thread management  
+- Object-oriented system design  
+- Networked GUI application development  
+
+> Designed and implemented independently to explore real-time communication systems using Java.
+
+---
 
 
 
