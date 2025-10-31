@@ -1,20 +1,96 @@
-# Online-Chat
-Java聊天系统-基于TCP/IP协议的在线通信
-> 项目分析：https://www.cnblogs.com/YXCS-cya/p/18878975
+# Java Instant Messaging System (Online-Chat)
 
-## 功能说明
-1. 登录
-- 用户可以根据登陆界面提供的用户文档，选择其中的账号进行登录
-2. 聊天功能
-- 本软件采用了多线程及哈希容器进行管理，在每一台电脑上都可以登陆多个账号，而服务器只需要一个即可
-3. 好友列表
-- 本程序根据提供的用户文档创建好友列表，但由于不需要注册功能，故删去了增加好友功能，而是将其改成了:只要在用户文档中添加对应的用户和密码，就会将所有用户的好友更新
-- 同理，在用户文档中删改对应用户密码，也能起到对好友 操作的目的
-3.1 好友管理
-- 通过登陆界面可以直接注册用户，注册成功后会自动同步到好友列表
-> 注：通过注册功能有可能使用户文档格式错乱（如出现空行，多个用户信息重叠）,请手动进入UserData.txt调整
-4. 好友状态显示
-- 本程序采用哈希容器管理客户端与服务器的连接通道的线程，并以此实现将上线的好友消息群发给所有客户端，并让其更新的功能
-- 因此，登陆第二个账号后，之前登陆的账号也能知道新账号上线了
-5. 聊天记录管理
-- 通过服务器端文件方式进行同步，也依赖此功能，保证在线好友未打开对话框时可以收到消息
+> A multi-threaded instant messaging system built with Java and TCP/IP Socket communication
+
+---
+
+## 🧩 Project Overview
+This project implements a desktop instant messaging system using **Java TCP/IP network programming**.  
+It features real-time communication between multiple clients and a central server through **Socket** connections, **multi-threading**, and **object serialization**.  
+The system provides a complete client–server messaging architecture with GUI interfaces and persistent chat history storage.
+
+- **Language:** Java  
+- **Communication Protocol:** TCP/IP  
+- **Core Technologies:** Socket, ServerSocket, Multi-threading, Object Streams, File I/O  
+- **Key Features:** Login & Registration, Friend List, Real-Time Chat, Persistent Message Storage  
+
+---
+
+## 🧰 Technical Highlights
+| Module | Description |
+|--------|--------------|
+| **Network Communication** | Implements reliable connections via `Socket` and `ServerSocket` based on the TCP protocol |
+| **Message Serialization** | Custom `Message` class and `MessageType` interface used for encoding and decoding data packets |
+| **Concurrent Server** | Each client connection is handled by an independent thread to support multiple simultaneous users |
+| **I/O and Object Streams** | Uses `ObjectInputStream` and `ObjectOutputStream` for object-level message transmission |
+| **GUI Interface** | Built with `Swing`, including login, friend list, and chat windows |
+| **Data Persistence** | Chat history is automatically stored locally in the `Chatdata` folder, named by user pairs |
+
+---
+
+## 💻 System Architecture
+The system consists of three core components:
+
+1. **Client Side**
+   - Provides user login, friend list, and chat interfaces.  
+   - Establishes a socket connection to the central server.  
+   - Sends and receives serialized `Message` objects.  
+   - Saves chat logs locally for each conversation.
+
+2. **Server Side**
+   - Uses `ServerSocket` to continuously listen for client requests.  
+   - Creates a dedicated thread for each connected client.  
+   - Manages online user sessions and forwards messages.  
+
+3. **Message Definition Layer**
+   - Defines communication rules through `Message` and `MessageType`.  
+   - Supports login verification, text messages, and extensible message types.  
+
+---
+
+## 📁 Project Structure
+
+### 🧭 Summary
+- **Client/** – Handles GUI, user interactions, and Socket communication.  
+- **Server/** – Manages concurrent client threads and message routing.  
+- **User_data/** – Defines data models and communication protocols.  
+- **Data/** – Stores persistent chat logs and user information.  
+
+---
+
+## 🧠 Feature Demonstration
+
+### Login and Registration
+![Login Interface](./docs/login.png)
+
+- Users can log in with credentials or register a new account.  
+- Upon successful authentication, the system connects to the server and displays the friend list.
+
+---
+
+### Friend List
+![Friend List](./docs/friends.png)
+
+- Displays all available contacts dynamically.  
+- Double-click on a friend to start a conversation.  
+- Supports multiple chat windows concurrently.
+
+---
+
+### Chat Window
+![Chat Interface](./docs/chat.png)
+
+- Real-time text communication with timestamped messages.  
+- Message history is automatically written to local files.  
+- Supports bi-directional messaging between any two online users.
+
+---
+
+### Chat Data Structure
+![Chat Data Folder](./docs/chatdata.png)
+
+Chat logs are automatically saved in the `Data/Chatdata` directory,  
+where each file corresponds to a specific conversation:
+
+
+
