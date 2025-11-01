@@ -19,12 +19,15 @@ The system provides a complete client–server messaging architecture with GUI i
 ## 🧰 Technical Highlights
 | Module | Description |
 |--------|--------------|
-| **Network Communication** | Implements reliable connections via `Socket` and `ServerSocket` based on the TCP protocol |
+| **Network Communication** | Establishes reliable connections via `Socket` and `ServerSocket` based on the TCP protocol |
 | **Message Serialization** | Custom `Message` class and `MessageType` interface used for encoding and decoding data packets |
-| **Concurrent Server** | Each client connection is handled by an independent thread to support multiple simultaneous users |
+| **Concurrent Server** | Each client connection is managed by an independent thread within a thread pool to support multiple simultaneous users |
+| **Online Status Synchronization** | Maintains a hash container of active connections; the server automatically broadcasts user online/offline updates to all connected clients in real time |
+| **Persistent Messaging** | Messages are logged on the server side and synchronized as local text files, ensuring users can still receive messages after reconnecting |
 | **I/O and Object Streams** | Uses `ObjectInputStream` and `ObjectOutputStream` for object-level message transmission |
 | **GUI Interface** | Built with `Swing`, including login, friend list, and chat windows |
 | **Data Persistence** | Chat history is automatically stored locally in the `Chatdata` folder, named by user pairs |
+
 
 
 
